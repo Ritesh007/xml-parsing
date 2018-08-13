@@ -20,14 +20,14 @@ class xmlConverter():
                 try:
                     tree = ET.parse(input1)
                     root = tree.getroot()
-                    # looping over the tags in the xml file
-                    for child1 in root.findall("PurchaseRequisition"):
-                        for child2 in child1.findall("RequisitionSupplierGroup"):
-                            for child3 in child2.findall("RequisitionLine"):
-                                for child4 in child3.findall("InternalInfo"):
-                                    for child5 in child4.findall("Attachments"):
-                                        for child6 in child5.findall("Attachment"):
-                                            for child7 in child6.findall("AttachmentBase64"):
+                    # looping over the tags in the xml file in a hierarchical manner 
+                    for child1 in root.findall("<parenttag>"):
+                        for child2 in child1.findall("<tag1>"):
+                            for child3 in child2.findall("<tag2>"):
+                                for child4 in child3.findall("<tag3>"):
+                                    for child5 in child4.findall("<tag4>"):
+                                        for child6 in child5.findall("<tag5>"):
+                                            for child7 in child6.findall("<tagwewanttoexclude>"):
                                                 child6.remove(child7)
                     file_name = file+"_output"
                     output = os.path.join(subdir, file_name)
