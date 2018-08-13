@@ -1,6 +1,6 @@
 """
 This code snippet parses xml files in a folder and does the operation you want.
-Here we are excluding xml tags by name and saving the newly generated file with it's extented by '_output'
+Here we are excluding xml tags by name and saving the newly generated file with it's name extented by '_output'
 """
 
 
