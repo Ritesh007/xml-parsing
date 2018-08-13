@@ -15,8 +15,6 @@ class xmlConverter():
         for subdir, dirs, files in os.walk(rootdir):
             for file in files:
                 input1 = os.path.join(subdir, file)
-                print(subdir)
-                print(file)
                 try:
                     tree = ET.parse(input1)
                     root = tree.getroot()
@@ -32,7 +30,6 @@ class xmlConverter():
                     file_name = file+"_output"
                     output = os.path.join(subdir, file_name)
                     tree.write(output)
-                    #print(subdir/+"output"+file)
                 except Exception as e:
                     print("This file has no data that we need so this is skipped ---> "+e)
 
